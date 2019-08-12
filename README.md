@@ -52,11 +52,12 @@ that __.so__ file is our dynamic plugin that now can be loaded from Fluent Bit t
 
 ## Usage
 This program is designed to enumerate audit/log records in such a way that if a "gap" in the ordering is noticed 
-it should be discovered. In order to enumerate the records, the config file for the plugin __securedcnt contains these values:
+it should be discovered. In order to enumerate the records, the config file for the plugin __securedcnt__ contains these values:
+```
 [FILTER]
     Name                securedcnt
     Match               *
-#   securedcnt_file is used to store the coc value
+#   securedcnt_file is used to store the secured counter value
     securedcnt_file            securedcnt_file.ccc
 #   this file contains the key used to protect the securedcnt_file
 #   it should be removed after startup.
@@ -65,7 +66,7 @@ it should be discovered. In order to enumerate the records, the config file for 
     securedcnt_seed            myseedvalue
 #   this is the field that should be added as a secured counter value in the records
     securedcnt_field           securedcnt_field
-
+```
 
 ## License
 
