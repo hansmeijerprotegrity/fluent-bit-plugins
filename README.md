@@ -67,6 +67,42 @@ it should be discovered. In order to enumerate the records, the config file for 
 #   this is the field that should be added as a secured counter value in the records
     securedcnt_field           securedcnt_field
 ```
+When the program runs it adds a field name by the __securedcnt_field__ to the records.
+A sample of this could be this configuration used:
+```
+[SERVICE]
+    Flush           1
+    Daemon          off
+    Log_Level       debug
+
+[INPUT]
+    Name         cpu
+    alias        cpu_data
+    Interval_Sec 1
+    Interval_NSec 10
+
+[FILTER]
+    Name                securedcnt
+    Match               *
+#   securedcnt_file is used to store the coc value
+    securedcnt_file            securedcnt_file.ccc
+#   this file contains the key used to protect the securedcnt_file
+#   it should be removed after startup.
+    securedcnt_key_file        securedcnt_key_file.bin
+#   this file contains a seed value when generating the new encryption key.
+    securedcnt_seed            myseedvalue
+#   this is the field that should be added as a secured counter value in the records
+    securedcnt_field           securedcnt_field
+
+[OUTPUT]
+    Name stdout
+    Match *
+```
+A sample test of the plugin would look like this :
+```
+[0] cpu.0: [1565642298.000177130, {"cpu_p"=>39.000000, "user_p"=>6.000000, "system_p"=>33.000000, "cpu0.p_cpu"=>39.000000, "cpu0.p_user"=>6.000000, "cpu0.p_system"=>33.000000, "securedcnt_field"=>0}]
+[0] cpu.0: [1565642299.000713632, {"cpu_p"=>71.999999, "user_p"=>13.000000, "system_p"=>58.999999, "cpu0.p_cpu"=>71.999999, "cpu0.p_user"=>13.000000, "cpu0.p_system"=>58.999999, "securedcnt_field"=>1}]
+```
 
 ## License
 
