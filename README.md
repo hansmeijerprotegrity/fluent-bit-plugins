@@ -10,6 +10,13 @@ The following repository shows the plugin for enumeration audit/log records in a
 - C compiler: GCC or Clang
 - CMake3
 
+## Introduction
+This plugin is intended for use of enumerating the records in such a way that if some records are lost, i.e. the
+enumeration is not in sequence it should be more easy to discover.
+This can be useful when records are of a more important item and reflects usage of something that are audited.
+
+In the following steps we will build the plugin provided called __filter_securedcnt__. As a first step get into the _build/_ directory:
+
 ## Getting Started
 
 In the following steps we will build the plugin provided called __filter_securedcnt__. As a first step get into the _build/_ directory:
