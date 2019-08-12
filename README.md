@@ -103,6 +103,9 @@ A sample test of the plugin would look like this :
 [0] cpu.0: [1565642298.000177130, {"cpu_p"=>39.000000, "user_p"=>6.000000, "system_p"=>33.000000, "cpu0.p_cpu"=>39.000000, "cpu0.p_user"=>6.000000, "cpu0.p_system"=>33.000000, "securedcnt_field"=>0}]
 [0] cpu.0: [1565642299.000713632, {"cpu_p"=>71.999999, "user_p"=>13.000000, "system_p"=>58.999999, "cpu0.p_cpu"=>71.999999, "cpu0.p_user"=>13.000000, "cpu0.p_system"=>58.999999, "securedcnt_field"=>1}]
 ```
+For security reasons, the securedcnt_key_file should be removed, when fluent-bit is started. For a restart of fluent-bit,
+the file should be replaced again.
+If the file containing the key value or the securedcnt_file is removed, the enumeration will start at 0 again, indicating something happened.
 
 ## License
 
