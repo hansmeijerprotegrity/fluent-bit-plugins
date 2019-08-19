@@ -15,7 +15,7 @@ This plugin is intended for use of enumerating the records in such a way that if
 enumeration is not in sequence it should be more easy to discover.
 This can be useful when records are of a more important item and reflects usage of something that are audited.
 
-In the following steps we will build the plugin provided called __filter_securedcnt__. As a first step create the _build_ folder (mkdir build) then get into the _build/_ directory:
+In the following steps we will build the plugin provided called __filter_securedcnt__. As a first step get into the _build/_ directory:
 
 ## Getting Started
 
